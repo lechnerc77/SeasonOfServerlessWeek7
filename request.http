@@ -1,0 +1,34 @@
+
+###
+GET http://localhost:7071/api/recipe/nigeria
+
+###
+GET http://localhost:7071/api/recipe/kenia
+
+###
+GET http://localhost:7071/api/recipe/nigeria?recipename=Egusi%20Soup
+
+###
+GET http://localhost:7071/api/recipe/kenya?recipename=Egusi%20Soup
+
+###
+GET http://localhost:7071/api/recipe/kenya?recipename=Karanga
+
+###
+GET http://localhost:8080/api/recipe/kenya?recipename=Karanga
+
+###
+GET https://recipe-connector.c-3558f15.kyma.shoot.live.k8s-hana.ondemand.com/
+
+###
+GET https://recipe-connector.c-3558f15.kyma.shoot.live.k8s-hana.ondemand.com/api/recipe/kenya
+
+###
+GET https://recipe-connector.c-3558f15.kyma.shoot.live.k8s-hana.ondemand.com/api/recipe/nigeria
+
+###
+GET https://recipe-connector.c-3558f15.kyma.shoot.live.k8s-hana.ondemand.com/api/recipe/kenya?recipename=Karanga
+
+###
+GET https://recipe-connector.c-3558f15.kyma.shoot.live.k8s-hana.ondemand.com/api/recipe/nigeria?recipename=Egusi%20Soup
+

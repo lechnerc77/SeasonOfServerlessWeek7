@@ -1,0 +1,40 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: recipe-connector
+  labels:
+    app: recipe-connector
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: recipe-connector
+  template:
+    metadata:
+      labels:
+        app: recipe-connector
+    spec:
+      containers:
+        - image: lechnerc77/recipe-connector:0.0.2
+          imagePullPolicy: Always
+          name: recipe-connector
+          ports:
+          - containerPort: 80
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: recipe-connector
+  labels:
+    app: recipe-connector
+spec:
+  ports:
+  - port: 80
+    protocol: TCP
+    targetPort: 80
+  selector:
+    app: recipe-connector
+  type: ClusterIP
+status:
+  loadBalancer: {}

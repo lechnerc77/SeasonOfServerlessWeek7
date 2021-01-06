@@ -1,0 +1,17 @@
+apiVersion: gateway.kyma-project.io/v1alpha1
+kind: APIRule
+metadata:
+  name: recipe-connector
+spec:
+  gateway: kyma-gateway.kyma-system.svc.cluster.local
+  rules:
+    - path: /.*
+      accessStrategies:
+        - handler: noop
+          config: {}
+      methods:
+        - GET
+  service:
+    host: recipe-connector
+    name: recipe-connector
+    port: 80
